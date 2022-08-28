@@ -14,20 +14,25 @@
         режимі, а потім запустити цей скрипт, 
         коли дерево DOM буде повністю побудовано.
      -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    Попробуй змінити текст div id="text__container" на будь-який новий за
-    допомогою JS скрипта написаного у файлі script.js
-
+    <div>
+      Попробуй змінити текст div id="text__container" при кліку на button 
+      на будь-який інший за допомогою JS скрипта написаного у файлі script.js
+    </div>
     <div class="hint">
         <i>
-            Підказка:</br>
-            document.getElementById та для отримання об'єкта</br>
-            .innerText для встановлення тексту
+            Підказки:</br>
+            document.getElementById та для отримання HTML тега у JS</br>
+            .onclick для обробки події натискання на кнопку</br>
+            .innerText для встановлення тексту</br>
           </i>
     </div>
 
+    <button id="changeText__btn">
+      Змінити текст
+    </button>
     <div id="text__container">
       “Nor is there anyone who loves or pursues or desires to obtain pain of
       itself, because it is pain, but occasionally circumstances occur in which
