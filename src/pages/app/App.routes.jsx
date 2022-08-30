@@ -1,6 +1,6 @@
-import routes from "../common/routes";
-import TaskPage from "./task/TaskPage";
-import HomePage from "./home/HomePage";
+import routes from "../../common/routes";
+import TaskPage from "../task/TaskPage";
+import HomePage from "../home/HomePage";
 
 const appRoutes = [
   {

@@ -1,9 +1,10 @@
-import Navigation from "../utils/Navigation";
+import Navigation from "../../utils/Navigation";
 import appRoutes from "./App.routes";
+import classNames from "./app.module.css";
 
 const App = () => {
   return (
-    <div>
+    <div className={classNames.app}>
       <Navigation routes={appRoutes} />
     </div>
   );
