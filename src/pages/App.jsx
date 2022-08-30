@@ -1,9 +1,12 @@
+import Navigation from "../utils/Navigation";
+import appRoutes from "./App.routes";
+
 const App = () => {
-    return (
-        <div>
-            Головна сторінка
-        </div>
-    );
-}
+  return (
+    <div>
+      <Navigation routes={appRoutes} />
+    </div>
+  );
+};
 
 export default App;
