@@ -8,7 +8,7 @@ const appRoutes = [
     element: <HomePage />,
   },
   {
-    path: routes.TASK,
+    path: `${routes.TASK}/:taskId`,
     element: <TaskPage />,
   },
 ];

@@ -1,10 +1,17 @@
+import listOfTasks from "../../mock/listOfTasks";
+import TaskLink from "../../components/taskLink/TaskLink";
+import routes from "../../common/routes";
+
 const HomePage = () => {
-    return (
+  return (
+    <div>
       <div>
-        Home page
+        {listOfTasks.map((task, index) => (
+          <TaskLink text={task.name} href={`${routes.TASK}/${index}`} />
+        ))}
       </div>
-    );
-  };
-  
-  export default HomePage;
-  
+    </div>
+  );
+};
+
+export default HomePage;
