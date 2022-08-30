@@ -1,3 +1,9 @@
+# Запуск проекту
+1. Скачати та встановити node - https://nodejs.org/uk/
+2. Відкрити термінал у папці з проектом та встановити паке за допомогою команди `yarn`
+3. Після встановлення пакетів запустити команду `yarn start`
+4. Удачного хакінгу)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
