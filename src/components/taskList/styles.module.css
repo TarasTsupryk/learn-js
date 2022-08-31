@@ -33,3 +33,9 @@
 .taskLink:hover {
   background-color: var(--background-primary);
 }
+
+@media (max-width: 480px) {
+  .taskList {
+    flex-direction: column;
+  }
+}
