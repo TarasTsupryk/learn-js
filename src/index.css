@@ -1,6 +1,5 @@
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
@@ -10,13 +9,24 @@ body {
 
 :root {
   /* colors */
+  --blue: #176af6;
   --background-primary: rgb(241, 241, 241);
-  --black-transparent-light: rgba(0, 0, 0, 0.15);
+  --black-transparent-light: rgba(0, 0, 0, 0.1);
+  --border-primary: #eef1f4;
+  --text-primary: #272727;
+  --text-secondary: #565656;
+  --text-tertiary: #8f8f8f;
 
   /* sizes */
+  --spacing2: 2px;
   --spacing4: 4px;
   --spacing6: 6px;
   --spacing8: 8px;
   --spacing10: 10px;
   --spacing12: 12px;
+  --spacing18: 18px;
+  --spacing24: 24px;
+
+  /* shadows */
+  --primary-shadow: rgb(160 160 160 / 5%) 0px 7px 15px;
 }
