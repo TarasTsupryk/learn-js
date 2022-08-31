@@ -1,4 +1,4 @@
-import TaskList from "../../components/taskLink/TaskList";
+import TaskList from "../../components/taskList/TaskList";
 
 const HomePage = () => {
   return (
