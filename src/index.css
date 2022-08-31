@@ -10,6 +10,9 @@ body {
 :root {
   /* colors */
   --blue: #176af6;
+  --purple: #5e1696;
+  --green: #0cad09;
+  --red: #d83b00;
   --background-primary: rgb(241, 241, 241);
   --black-transparent-light: rgba(0, 0, 0, 0.1);
   --border-primary: #eef1f4;

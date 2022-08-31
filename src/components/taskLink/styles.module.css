@@ -1,3 +1,35 @@
+.taskList {
+  display: flex;
+  padding: 10px;
+}
+
 .taskLink {
   margin: var(--spacing6);
+}
+
+.taskHeader {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+}
+
+.headerLabel {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--spacing12);
+}
+
+.date {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  margin-top: var(--spacing6);
+}
+
+.subTitle {
+  margin-top: var(--spacing12);
+  margin-left: 52px;
+}
+
+.taskLink:hover {
+  background-color: var(--background-primary);
 }
