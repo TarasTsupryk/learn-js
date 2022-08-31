@@ -1,6 +1,7 @@
 .paper {
   background-color: white;
-  border-radius: var(--spacing6);
-  box-shadow: 0px 0px 0px var(--black-transparent-light);
-  padding: var(--spacing8) var(--spacing12);
+  border-radius: var(--spacing12);
+  box-shadow: 0px 0px var(--spacing8) var(--primary-shadow);
+  border: var(--spacing2) solid var(--border-primary);
+  padding: var(--spacing12) var(--spacing24);
 }

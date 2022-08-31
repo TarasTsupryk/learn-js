@@ -1,0 +1,8 @@
+.numberIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  color: white;
+  font-weight: bold;
+}
