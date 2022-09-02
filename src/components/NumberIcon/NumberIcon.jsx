@@ -4,7 +4,7 @@ const NumberIcon = ({ children, size, color, className, ...props }) => {
   return (
     <div
       className={`${ClassNames.numberIcon} ${className}`}
-      style={{ height: size, width: size, backgroundColor: color }}
+      style={{ minHeight: size, minWidth: size, backgroundColor: color }}
       {...props}
     >
       {children}
