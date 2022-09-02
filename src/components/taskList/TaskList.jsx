@@ -1,5 +1,3 @@
-import dayjs from "dayjs";
-import { DATE_MASK_TIME_WITHOUT_YEAR } from "../../common/constants";
 import CustomLink from "../link/CustomLink";
 import listOfTasks from "../../mock/listOfTasks";
 import routes from "../../common/routes";
@@ -7,6 +5,7 @@ import Paper from "../paper/Paper";
 import Title from "../typography/title/Title";
 import SubTitle from "../typography/subTitle/SubTitle";
 import NumberIcon from "../NumberIcon/NumberIcon";
+import { formatDate } from "../../utils";
 
 import ClassNames from "./styles.module.css";
 
@@ -30,9 +29,7 @@ const TaskLink = ({
               {typeOfTask}. {text}
             </Title>
             <SubTitle className={ClassNames.date}>
-              {dayjs(dateOfPublication)
-                .format(DATE_MASK_TIME_WITHOUT_YEAR)
-                .replace(/_/, "at")}
+              {formatDate(dateOfPublication)}
             </SubTitle>
           </div>
         </header>
