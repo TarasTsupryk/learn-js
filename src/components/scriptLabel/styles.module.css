@@ -1,0 +1,13 @@
+.label {
+  padding: 2px 8px;
+  background-color: var(--text-quaternary);
+  color: var(--text-primary);
+  border-radius: var(--spacing6);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.copied {
+  color: var(--green);
+}
