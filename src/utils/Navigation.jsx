@@ -4,7 +4,7 @@ const Navigation = ({ routes }) => {
   return (
     <Routes>
       {routes.map((route) => (
-        <Route path={route.path} element={route.element} />
+        <Route key={route} path={route.path} element={route.element} />
       ))}
     </Routes>
   );
