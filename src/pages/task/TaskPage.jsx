@@ -1,54 +1,50 @@
-import { lazy, Suspense, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import ScriptLabel from "../../components/scriptLabel/ScriptLabel";
+import {
+  ScriptLabel,
+  Paper,
+  NumberIcon,
+  Title,
+  SubTitle,
+} from "../../components";
 import listOfTasks from "../../mock/listOfTasks";
 import ClassNames from "./styles.module.css";
 import error from "../../common/error";
+import TaskLoader from "./TaskLoader";
+import { formatDate } from "../../utils";
 
 const TaskPage = () => {
-  const [isError, setIsError] = useState("");
   const { taskId } = useParams();
   const task = listOfTasks.find((task) => task.id === taskId);
 
-  const TASK_PATH = `../tasks/taks_${taskId}/task_${taskId}.js`;
-
-  const ScriptComponent = useMemo(() => {
-    if (task)
-      return lazy(() =>
-        import(`../tasks/taks_${taskId}/task_${taskId}.js`).catch((e) => {
-          setIsError(e.message);
-        })
-      );
-    // eslint-disable-next-line
-  }, []);
-
   if (!task) return null;
-  const { name, text, size, testCommand, description } = task;
+  const { id, name, size, testCommand, description, dateOfPublication } = task;
 
   return (
     <div className={ClassNames.taskPage}>
       {task ? (
         <>
-          Задача номер №{taskId}
-          <div>{name}</div>
-          <div>{text}</div>
-          <div>{size}</div>
-          <div>{description}</div>
-          <div>
+          <Paper className={ClassNames.header}>
+            <NumberIcon size={40} color={"var(--purple"}>
+              {id}
+            </NumberIcon>
+            <div style={{ marginLeft: "var(--spacing12)" }}>
+              <Title className={ClassNames.title}>
+                Задача номер №{taskId}. {name}
+              </Title>
+              <SubTitle style={{ marginLeft: "auto" }}>
+                {formatDate(dateOfPublication)}
+              </SubTitle>
+            </div>
+          </Paper>
+          <Paper style={{ marginBottom: 8 }}>{size}</Paper>
+          <Paper style={{ marginBottom: 8 }}>
+            <div>{description}</div>
             Для запуску тесту запустіть команду{" "}
             <ScriptLabel label={testCommand} /> в терміналі
-          </div>
-          {!isError ? (
-            <Suspense fallback={`Завантаження ${TASK_PATH}`}>
-              <ScriptComponent />
-            </Suspense>
-          ) : (
-            <div>
-              Помилка завантаження скрипта {TASK_PATH}
-              <br />
-              {isError}
-            </div>
-          )}
+          </Paper>
+          <Paper style={{ marginBottom: 8 }}>
+            <TaskLoader task={task} />
+          </Paper>
         </>
       ) : (
         <p>{error.LOAD_ERROR}</p>
