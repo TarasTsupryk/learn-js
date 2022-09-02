@@ -10,14 +10,25 @@ import NumberIcon from "../NumberIcon/NumberIcon";
 
 import ClassNames from "./styles.module.css";
 
-const TaskLink = ({ id, text, href, subTitle, dateOfPublication }) => {
+const TaskLink = ({
+  id,
+  text,
+  href,
+  subTitle,
+  dateOfPublication,
+  typeOfTask,
+}) => {
   return (
     <CustomLink to={href}>
       <Paper className={ClassNames.taskLink}>
         <header className={ClassNames.taskHeader}>
-          <NumberIcon size={40} color={'var(--purple'}>{id + 1}</NumberIcon>
+          <NumberIcon size={40} color={"var(--purple"}>
+            {id}
+          </NumberIcon>
           <div className={ClassNames.headerLabel}>
-            <Title>{text}</Title>
+            <Title>
+              {typeOfTask}. {text}
+            </Title>
             <SubTitle className={ClassNames.date}>
               {dayjs(dateOfPublication)
                 .format(DATE_MASK_TIME_WITHOUT_YEAR)
@@ -37,12 +48,13 @@ const TaskList = () => {
       {listOfTasks.map((task, index) => (
         <TaskLink
           key={index}
-          id={index}
+          id={task.id}
           text={task.name}
           subTitle={task.description}
           size={task.size}
           dateOfPublication={task.dateOfPublication}
-          href={`${routes.TASK}/${index}`}
+          typeOfTask={task.typeOfTask}
+          href={`${routes.TASK}/${task.id}`}
         />
       ))}
     </div>
