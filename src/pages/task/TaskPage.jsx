@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import listOfTasks from "../../mock/listOfTasks";
 import error from "../../common/error";
+import ClassNames from './styles.module.css';
 
 const TaskPage = () => {
   const { taskId } = useParams();
@@ -11,7 +12,7 @@ const TaskPage = () => {
   const { name, text, size } = task;
 
   return (
-    <div>
+    <div className={ClassNames.taskPage}>
       Задача номер №{taskId}
       <div>{name}</div>
       <div>{text}</div>
