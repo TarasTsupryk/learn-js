@@ -1,22 +1,36 @@
+import { lazy, Suspense, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import listOfTasks from "../../mock/listOfTasks";
+import ClassNames from "./styles.module.css";
 import error from "../../common/error";
-import ClassNames from './styles.module.css';
 
 const TaskPage = () => {
   const { taskId } = useParams();
   const task = listOfTasks[taskId];
 
-  if (!task) return error.TASK_DOES_NOT_EXIST;
+  const TASK_PATH = `../tasks/taks_${taskId}/task_${taskId}.js`;
 
-  const { name, text, size } = task;
+  const ScriptComponent = useMemo(() => {
+    if (task)
+      return lazy(() => import(`../tasks/taks_${taskId}/task_${taskId}.js`));
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className={ClassNames.taskPage}>
-      Задача номер №{taskId}
-      <div>{name}</div>
-      <div>{text}</div>
-      <div>{size}</div>
+      {task ? (
+        <>
+          Задача номер №{taskId}
+          <div>{task?.name}</div>
+          <div>{task?.text}</div>
+          <div>{task?.size}</div>
+          <Suspense fallback={`Завантаження ${TASK_PATH}`}>
+            <ScriptComponent />
+          </Suspense>
+        </>
+      ) : (
+        <p>{error.LOAD_ERROR}</p>
+      )}
     </div>
   );
 };
