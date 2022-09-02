@@ -8,11 +8,11 @@ const TaskPage = () => {
   const { taskId } = useParams();
   const task = listOfTasks[taskId];
 
-  const TASK_PATH = `../tasks/taks_${taskId}/task_${taskId}.jsx`;
+  const TASK_PATH = `../tasks/taks_${taskId}/task_${taskId}.js`;
 
   const ScriptComponent = useMemo(() => {
     if (task)
-      return lazy(() => import(`../tasks/taks_${taskId}/task_${taskId}.jsx`));
+      return lazy(() => import(`../tasks/taks_${taskId}/task_${taskId}.js`));
     // eslint-disable-next-line
   }, []);
 
